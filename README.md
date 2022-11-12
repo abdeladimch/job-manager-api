@@ -12,4 +12,4 @@ Created job manager REST API that performs CRUD operations on users and jobs
 
 ## Deployment:
 
-[Live Site](https://jobsmanager-api.herokuapp.com)
+[Live Site](https://job-manager-api-production.up.railway.app)
