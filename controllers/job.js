@@ -16,8 +16,8 @@ const createJob = async (req, res) => {
 };
 
 const getAllJobs = async (req, res) => {
-  const jobs = await Job.find();
-  if (jobs.length < 1) {
+  const jobs = await Job.find().populate({ path: "user", select: "_id name" });
+  if (!jobs.length) {
     throw new CustomError.NotFoundError("No jobs found");
   }
   res.status(StatusCodes.OK).json({ jobs, count: jobs.length });
