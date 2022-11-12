@@ -10,6 +10,7 @@ const authUser = async (req, res, next) => {
   if (!accessToken && !refreshToken) {
     throw new CustomError.UnauthenticatedError("Authentication failed!");
   }
+
   if (accessToken) {
     const decoded = jwt.verify(accessToken, process.env.JWT_SECRET);
     req.user = decoded;
